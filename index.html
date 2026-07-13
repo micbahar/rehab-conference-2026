@@ -7,7 +7,7 @@
   <title>הרשמה לכנס החצי־שנתי של איגוד השיקום בישראל</title>
   <style>
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; width: 100%; min-height: 100%; }
+    html, body { margin: 0; padding: 0; width: 100%; min-height: 100%; overflow-x: hidden; }
     body {
       font-family: Arial, sans-serif;
       color: #173b31;
@@ -15,7 +15,7 @@
       line-height: 1.5;
     }
     .top { height: 8px; background: #006b4f; }
-    .wrap { width: 94%; max-width: 1040px; margin: 0 auto; }
+    .wrap { width: 94%; max-width: 1040px; margin: 0 auto; overflow: hidden; }
     .logos {
       display: block;
       text-align: center;
@@ -108,6 +108,21 @@
     #status.ok { display: block; background: #e8f7ec; color: #17652c; }
     #status.error { display: block; background: #fdebed; color: #8b1824; }
     footer { text-align: center; padding: 22px; background: #004d3a; color: #fff; }
+    .hp {
+      position: fixed !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      overflow: hidden !important;
+      clip: rect(0 0 0 0) !important;
+      clip-path: inset(50%) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+    .hp input { width: 1px !important; height: 1px !important; }
     iframe { display: none; width: 0; height: 0; border: 0; }
     @media (max-width: 700px) {
       .logos img { display: block; max-width: 82%; height: 80px; margin: 8px auto; }
@@ -148,7 +163,7 @@
       <form id="registrationForm" method="post" action="https://script.google.com/macros/s/AKfycbyLjACsLQqxIiGqvdAl-DwHk---6nEVu2UOKEsMVuIKVPnII_sGrMW7uwjGOhyHfjLu/exec" target="submitFrame">
         <input type="hidden" name="action" value="register">
         <input type="hidden" name="submissionToken" id="submissionToken">
-        <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px">
+        <div class="hp" aria-hidden="true"><label>השאירו שדה זה ריק<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 
         <div class="note"><b>ההרשמה מראש נדרשת.</b> נא למלא את כל שדות החובה.</div>
 
